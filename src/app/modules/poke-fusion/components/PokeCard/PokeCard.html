@@ -1,0 +1,35 @@
+@if (pokemon) {
+  <div class="poke-card">
+    @if (pokemon.isFusioned) {
+      <button class="favorite-button" (click)="onHandleFavorite()">
+        Favorite
+      </button>
+    }
+    <div class="poke-card-header">
+      <h2 id="pokemon-name">{{pokemon.name}}</h2>
+      <span id="pokemon-id">{{pokemon.id}}</span>
+    </div>
+    <div class="poke-card-image">
+      <img id="pokemon-image" [src]="pokemon.sprites.front_default" alt="Pokémon Image">
+    </div>
+    <div class="poke-card-info">
+      <p><strong>Type: </strong> 
+        @for (pokeType of pokemon.types; track pokeType.slot) {
+          <span id="pokemon-type">{{pokeType.type.name}}, </span>
+        }
+      </p>
+      <p><strong>Stats:</strong>
+        @for (stat of pokemon.stats; track stat) {
+          <div>{{stat.stat.name}}: {{stat.base_stat}}</div>
+        } 
+      <p>
+        <strong>Abilities:</strong> <span id="pokemon-weight">
+          @for (ability of pokemon.abilities; track ability) {
+            {{ability.ability?.name}} 
+          }
+        </span></p>
+    </div>
+  </div>
+} @else {
+  <p>No Pokémon data available.</p>
+}
