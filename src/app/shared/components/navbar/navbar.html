@@ -1,0 +1,90 @@
+<header class="navbar">
+  <div class="navbar-container">
+    <!-- Logo -->
+    <div class="navbar-logo">
+      <a href="/">PokeFusion</a>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav class="navbar-menu">
+      <a href="/" class="nav-link">Home</a>
+      <!-- <a href="/explore" class="nav-link">Explore</a> -->
+      <a href="/favorites" class="nav-link">Favorites</a>
+      <a href="/about" class="nav-link">About</a>
+    </nav>
+
+    <!-- Mobile Menu Toggle (optional) -->
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<style>
+  .navbar {
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
+  .navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+  }
+
+  .navbar-logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+  }
+
+  .navbar-menu {
+    display: flex;
+    gap: 30px;
+  }
+
+  .nav-link {
+    color: #666;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s;
+  }
+
+  .nav-link:hover {
+    color: #ff6b35;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 5px 0;
+    transition: 0.3s;
+  }
+
+  @media (max-width: 768px) {
+    .navbar-menu {
+      display: none;
+    }
+    .hamburger {
+      display: flex;
+    }
+  }
+</style>

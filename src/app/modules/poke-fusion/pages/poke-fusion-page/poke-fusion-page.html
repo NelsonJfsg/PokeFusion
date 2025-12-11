@@ -1,0 +1,29 @@
+<section class="main-container">
+  <div class="left-container">
+    <div>
+      <h4>Base pokemons</h4>
+      <hr/>
+    </div>
+    <section class="pokemons-container">
+      @for (pokemon of pokemons; track pokemon.id) {
+        <poke-card 
+          [pokemon]="pokemon"
+        />
+      }
+    </section>
+  </div>
+
+  <div class="right-container">
+    <section class="">
+      <h4>Fused pokemon</h4>
+      <hr/>
+    </section>
+
+    <section class="pokemons-container">
+      <poke-card 
+        [pokemon]="pokemonFusioned"
+      />
+    </section>
+  </div>
+</section>
+
