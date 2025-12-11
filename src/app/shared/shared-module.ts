@@ -6,6 +6,7 @@ import { PokeCard } from './components/PokeCard/PokeCard';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { AboutRoutingModule } from "../modules/about/about-routing-module";
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 
@@ -19,7 +20,8 @@ import { AboutRoutingModule } from "../modules/about/about-routing-module";
     CommonModule,
     MatButtonModule,
     MatIconModule,
-    AboutRoutingModule
+    AboutRoutingModule,
+    MatProgressSpinnerModule
 ],
   exports: [
     MainLayout,
