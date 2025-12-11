@@ -1,14 +1,17 @@
 <section class="main-container">
+
   <div class="left-container">
+
     <div>
       <div style="width: 100%; display : flex; justify-content: space-between;">
-        <h4>Base pokemons</h4>
-        <button class="" (click)="onReFuse()">
-          Re-fusionar
+        <h4 class="header-title-text">Base pokemons</h4>
+        <button mat-icon-button (click)="onReFuse()">
+          <mat-icon>refresh</mat-icon>
         </button>
       </div>
       <hr/>
     </div>
+
     <section class="pokemons-container">
       @for (pokemon of pokemons; track pokemon.id) {
         <poke-card 
@@ -16,11 +19,12 @@
         />
       }
     </section>
+    
   </div>
 
   <div class="right-container">
     <section class="">
-      <h4>Fused pokemon</h4>
+      <h4 class="header-title-text">Fused pokemon</h4>
       <hr/>
     </section>
 
@@ -30,5 +34,6 @@
       />
     </section>
   </div>
+  
 </section>
 

@@ -1,19 +1,22 @@
 <section>
 
-  <header>
+  <header style="display: flex; align-items: center; justify-content: space-between; padding: 10px 0;">
     <h1>Favorites Pokémons Page</h1>
+    <mat-paginator [length]="totalLength" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+      (page)="onPageChange($event)">
+    </mat-paginator>
   </header>
 
   <main class="main-container">
-    @for (pokemon of pokemons; track pokemon.key) {
-      <poke-card [pokemon]="pokemon.value"></poke-card>
+    @for (pokemon of getPaginatedPokemons(); track pokemon.key) {
+    <poke-card [pokemon]="pokemon.value"></poke-card>
     }
 
     @if (pokemons.length === 0) {
-      <p>No favorite Pokémons found.</p>
+    <p>No favorite Pokémons found.</p>
     }
   </main>
 
-  
+
 
 </section>

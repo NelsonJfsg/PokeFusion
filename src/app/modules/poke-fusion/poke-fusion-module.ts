@@ -7,6 +7,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { PokeFusionService } from './services/poke-fusion-service';
 import { PokeCard } from '../../shared/components/PokeCard/PokeCard';
 import { SharedModule } from '../../shared/shared-module';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { SharedModule } from '../../shared/shared-module';
     CommonModule,
     PokeFusionRoutingModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [
     PokeFusionService

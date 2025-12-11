@@ -5,6 +5,7 @@ import { FavoritesRoutingModule } from './favorites-routing-module';
 import { FavoritesPokemonsPage } from './pages/favorites-pokemons-page/favorites-pokemons-page';
 import { PokeCard } from '../../shared/components/PokeCard/PokeCard';
 import { SharedModule } from '../../shared/shared-module';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { SharedModule } from '../../shared/shared-module';
   imports: [
     CommonModule,
     FavoritesRoutingModule,
-    SharedModule
+    SharedModule,
+    MatPaginatorModule
   ]
 })
 export class FavoritesModule { }
