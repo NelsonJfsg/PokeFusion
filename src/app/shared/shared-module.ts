@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { MainLayout } from './layouts/main-layout/main-layout';
 import { Navbar } from './components/navbar/navbar';
 import { PokeCard } from './components/PokeCard/PokeCard';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { AboutRoutingModule } from "../modules/about/about-routing-module";
 
 
 
@@ -13,8 +16,11 @@ import { PokeCard } from './components/PokeCard/PokeCard';
     PokeCard
   ],
   imports: [
-    CommonModule
-  ],
+    CommonModule,
+    MatButtonModule,
+    MatIconModule,
+    AboutRoutingModule
+],
   exports: [
     MainLayout,
     PokeCard

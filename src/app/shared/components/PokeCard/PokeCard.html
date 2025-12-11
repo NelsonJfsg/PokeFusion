@@ -1,41 +1,48 @@
 @if (pokemon) {
   <div class="poke-card">
-    @if (pokemon.isFusioned && !pokemon.isFavorite) {
-      <button class="favorite-button" (click)="onHandleFavorite()">
-        Favorite
-      </button>
-    }
 
-    @if (pokemon.isFavorite) {
-      <span class="favorite-label">★ Favorite</span>
-      <button class="favorite-button unfavorite" (click)="onHandleFavorite()">
-        Unfavorite
+    <section class="header-container">
+      @if (pokemon.isFusioned && !pokemon.isFavorite) {
+
+      <button mat-icon-button (click)="onHandleFavorite()">
+        <mat-icon style="color: #ff6b35;">favorite_border</mat-icon>
       </button>
-    }
+
+      }
+
+      @if (pokemon.isFavorite) {
+      <button mat-icon-button (click)="onHandleFavorite()">
+        <mat-icon style="color: #ff6b35;">favorite</mat-icon>
+      </button>
+      }
+    </section>
 
     <div class="poke-card-header">
       <h2 id="pokemon-name">{{pokemon.name}}</h2>
       <span id="pokemon-id">{{pokemon.id}}</span>
     </div>
+
     <div class="poke-card-image">
       <img id="pokemon-image" [src]="pokemon.sprites.front_default" alt="Pokémon Image">
     </div>
+
     <div class="poke-card-info">
-      <p><strong>Type: </strong> 
+      <p><strong>Type: </strong>
         @for (pokeType of pokemon.types; track pokeType.slot) {
-          <span id="pokemon-type">{{pokeType.type.name}}, </span>
+        <span id="pokemon-type">{{pokeType.type.name}}, </span>
         }
       </p>
       <p><strong>Stats:</strong>
         @for (stat of pokemon.stats; track stat) {
-          <div>{{stat.stat.name}}: {{stat.base_stat}}</div>
-        } 
+      <div>{{stat.stat.name}}: {{stat.base_stat}}</div>
+      }
       <p>
         <strong>Abilities:</strong> <span id="pokemon-weight">
           @for (ability of pokemon.abilities; track ability) {
-            {{ability.ability?.name}} 
+          {{ability.ability?.name}}
           }
-        </span></p>
+        </span>
+      </p>
     </div>
   </div>
 } @else {

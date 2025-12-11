@@ -21,15 +21,11 @@ export class PokeFusionPage implements OnInit{
   ) { }
 
   public ngOnInit() : void{
-
     this.fetchAndFuseRandomPokemons();
-
   }
 
   public async fetchAndFuseRandomPokemons () : Promise<void> {
     
-    // const resp =  await lastValueFrom(this.pokeFusionService.getRandomPokemon());
-
     let pokemonOne = null;
     let pokemonTwo = null;
     let pokemonThree = null; 
@@ -44,7 +40,6 @@ export class PokeFusionPage implements OnInit{
     this.pokemons = pokemons;
 
     pokemonOne = poke1;
-    console.log('pokemonIOne', pokemonOne);
     pokemonTwo = poke2;
     pokemonThree = poke3;
 
@@ -119,8 +114,5 @@ export class PokeFusionPage implements OnInit{
     this.pokemonFusioned = null;
     this.fetchAndFuseRandomPokemons();
   }
-
-
-
 
 }
