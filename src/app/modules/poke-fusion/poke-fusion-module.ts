@@ -9,6 +9,7 @@ import { PokeCard } from '../../shared/components/PokeCard/PokeCard';
 import { SharedModule } from '../../shared/shared-module';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { MatIconModule } from '@angular/material/icon';
     HttpClientModule,
     SharedModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     PokeFusionService
