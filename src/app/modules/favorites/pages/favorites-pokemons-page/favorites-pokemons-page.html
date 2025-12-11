@@ -1,1 +1,19 @@
-<p>favorites-pokemons-page works!</p>,
+<section>
+
+  <header>
+    <h1>Favorites Pokémons Page</h1>
+  </header>
+
+  <main class="main-container">
+    @for (pokemon of pokemons; track pokemon.key) {
+      <poke-card [pokemon]="pokemon.value"></poke-card>
+    }
+
+    @if (pokemons.length === 0) {
+      <p>No favorite Pokémons found.</p>
+    }
+  </main>
+
+  
+
+</section>

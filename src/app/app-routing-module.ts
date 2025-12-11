@@ -11,6 +11,10 @@ const routes: Routes = [
     loadChildren: () => import('./modules/favorites/favorites-module').then(m => m.FavoritesModule)
   },
   {
+    path : 'about',
+    loadChildren: () => import('./modules/about/about-module').then(m => m.AboutModule)
+  },
+  {
     path : '',
     redirectTo : 'poke-fusion',
     pathMatch : 'full'

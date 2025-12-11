@@ -1,10 +1,18 @@
 @if (pokemon) {
   <div class="poke-card">
-    @if (pokemon.isFusioned) {
+    @if (pokemon.isFusioned && !pokemon.isFavorite) {
       <button class="favorite-button" (click)="onHandleFavorite()">
         Favorite
       </button>
     }
+
+    @if (pokemon.isFavorite) {
+      <span class="favorite-label">★ Favorite</span>
+      <button class="favorite-button unfavorite" (click)="onHandleFavorite()">
+        Unfavorite
+      </button>
+    }
+
     <div class="poke-card-header">
       <h2 id="pokemon-name">{{pokemon.name}}</h2>
       <span id="pokemon-id">{{pokemon.id}}</span>

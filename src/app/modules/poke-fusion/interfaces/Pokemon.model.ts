@@ -2,6 +2,7 @@ export interface Pokemon {
   name : string;
   id : number;
   isFusioned ?: boolean;
+  isFavorite ?: boolean;
   types : Type[];
   stats : Stat[];
   abilities : Ability[];
