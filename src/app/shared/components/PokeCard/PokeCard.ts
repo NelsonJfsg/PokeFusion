@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
-import { Pokemon } from '../../interfaces/Pokemon.model';
+import { Pokemon } from '../../../modules/poke-fusion/interfaces/Pokemon.model';
 
 @Component({
   selector: 'poke-card',
@@ -16,9 +16,11 @@ export class PokeCard {
 
       if (localStorage.getItem(`pokemon_${this.pokemon.id}`)) {
         localStorage.removeItem(`pokemon_${this.pokemon.id}`);
+        this.pokemon.isFavorite = false;
         return;
       }
 
+      this.pokemon.isFavorite = true;
       localStorage.setItem(`pokemon_${this.pokemon.id}`, JSON.stringify(this.pokemon));
     }
   }

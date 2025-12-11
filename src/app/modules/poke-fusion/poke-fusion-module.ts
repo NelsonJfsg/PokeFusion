@@ -5,20 +5,20 @@ import { PokeFusionRoutingModule } from './poke-fusion-routing-module';
 import { PokeFusionPage } from './pages/poke-fusion-page/poke-fusion-page';
 import { HttpClientModule } from '@angular/common/http';
 import { PokeFusionService } from './services/poke-fusion-service';
-import { PokeCard } from './components/PokeCard/PokeCard';
+import { PokeCard } from '../../shared/components/PokeCard/PokeCard';
+import { SharedModule } from '../../shared/shared-module';
 
 
 @NgModule({
   declarations: [
     PokeFusionPage,
 
-    // * Components * //
-    PokeCard
   ],
   imports: [
     CommonModule,
     PokeFusionRoutingModule,
-    HttpClientModule 
+    HttpClientModule,
+    SharedModule
   ],
   providers: [
     PokeFusionService

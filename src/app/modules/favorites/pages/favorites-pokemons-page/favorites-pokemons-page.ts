@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Pokemon } from '../../../poke-fusion/interfaces/Pokemon.model';
 
 @Component({
   selector: 'favorites-pokemons-page',
@@ -6,4 +7,27 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './favorites-pokemons-page.css',
   standalone : false
 })
-export class FavoritesPokemonsPage { }
+export class FavoritesPokemonsPage implements OnInit{
+  
+  public pokemons : Array<{ key: string; value: Pokemon }> = [];
+
+  ngOnInit(): void {
+    this.loadFavoritesPokemons();
+  } 
+
+
+  private loadFavoritesPokemons(): void {
+    const pokemonArray = Object.keys(localStorage)
+      .filter(key => key.startsWith('pokemon'))
+      .map(key => ({
+        key,
+        value: JSON.parse(localStorage.getItem(key) || '{}')
+      }));
+
+      console.log('pokemons', pokemonArray);
+
+      this.pokemons = pokemonArray;
+  }
+  
+
+}
